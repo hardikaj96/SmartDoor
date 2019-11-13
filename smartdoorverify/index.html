@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Enter OTP</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+ <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+ <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+ <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+ <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+ <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+ <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+ <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+ <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+ <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+ <script type="text/javascript" src="apigClient.js"></script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h2>Congratulations! Your face matches! Please enter OTP</h2>
+    <div id="error_message"></div>
+    <form>
+      <div class="input_field">
+        <input type="text" placeholder="OTP" id="otp">
+      </div>
+      <div class="btn">
+        <input id="submitF" type="submit">
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
