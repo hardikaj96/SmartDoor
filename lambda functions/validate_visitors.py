@@ -15,7 +15,7 @@ sns = boto3.client('sns')
 s3 = boto3.client('s3')
 rek = boto3.client('rekognition')
 kenvid = boto3.client('kinesisvideo')
-kenvidmed = boto3.client('kinesis-video-media',endpoint_url='https://s-1e415f8b.kinesisvideo.us-east-1.amazonaws.com',region_name='us-east-1')
+kenvidmed = boto3.client('kinesis-video-media',endpoint_url='<kinesis_endpoint_url>',region_name='us-east-1')
 
 def lambda_handler(event, context):
     record = event['Records'][0]
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
             fn = y["FragmentNumber"]
             print(x,y,fn)
             stream = kenvidmed.get_media(
-                StreamARN='arn:aws:kinesisvideo:us-east-1:397577651207:stream/kvs1/1572735942118',
+                StreamARN='kinesis_video_stream_arn',
                 StartSelector={
                     'StartSelectorType': 'FRAGMENT_NUMBER',
                     'AfterFragmentNumber': fn
@@ -81,6 +81,7 @@ def lambda_handler(event, context):
                 otp = randint(100000, 999999)
                 update_visitor(visitor, faceId, final_key)
                 insert_passcode(faceId, otp)
+                phoneNumber = visitor['phoneNumber']
                 send_sms_to_visitor(phoneNumber, str(otp))
                 print('sms sent to visitor',str(phoneNumber))
         else:
@@ -102,7 +103,7 @@ def check_visitor(faceId):
     return None
         
 def send_sms_to_owner(final_key):
-    owner_phone = '+15512288614'
+    owner_phone = '+1{owners_phone_number}'
     url = 'https://ccassignment002.s3.amazonaws.com/index.html?q='+final_key
     message = 'Please give access or deny the request for the visitor by visiting '+ url 
     sns.publish(

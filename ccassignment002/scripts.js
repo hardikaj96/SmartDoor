@@ -1,26 +1,4 @@
-// function validate(){
-//     var name = document.getElementById("name").value;
-//     var phone = document.getElementById("phone").value;
-//     var error_message = document.getElementById("error_message");
-    
-//     error_message.style.padding = "10px";
-    
-//     var text;
-//     if(name.length < 2){
-//       text = "Please Enter valid Name";
-//       error_message.innerHTML = text;
-//       return false;
-//     }
-//     if(isNaN(phone) || phone.length != 10){
-//       text = "Please Enter valid Phone Number";
-//       error_message.innerHTML = text;
-//       return false;
-//     }
-//     alert("Form Submitted Successfully!");
-//     return true;
-//   }
 
-// var API_URL = 'https://cjlu14ef9k.execute-api.us-east-1.amazonaws.com/dev/newvisitor';
 
 window.onload = function () {
   const urlParams = new URLSearchParams(window.location.search);
@@ -41,8 +19,8 @@ $('document').ready(function () {
     event.preventDefault();
   
     var apigClient = apigClientFactory.newClient({
-      accessKey: 'AKIAIOWVLFF3J2LH4AXA',
-      secretKey: 'w9V9s5IAFRxkZ1u1Vo8M5zphoSBaTVDBzl2s2aO4',
+      accessKey: 'your_access_key',
+      secretKey: 'your_secret_key',
     });
 
     const urlParams = new URLSearchParams(window.location.search);
