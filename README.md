@@ -7,3 +7,7 @@ Collaborators<br>
 [Virendra Singh Rajpurohit](vsr266@nyu.edu)<br>
 [Satish Aggarwal](sa5183@nyu.edu)<br>
 [Kundan Patel](kap675@nyu.edu)
+
+## Architecture Diagram
+
+![diagram](architecture-diagram.png)
